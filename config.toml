@@ -1,19 +1,29 @@
 # baseURL = "http://localhost"
-languageCode = "cn-Hans"
+languageCode = "zh-CN"
 # title = "My New Hugo Site"
 
-baseurl = "http://localhost"
+baseurl = "http://fullstackbb.com"
 title = "Meowu's Blog"
 sub_title = "Meowu's Blog"
 theme = "aglaus"
+enableRobotsTXT = true
+summaryLength = 150
 
-## googleAnalytics = "UA-XXXXXXXX-XX" # Optional
+googleAnalytics = "UA-120601047-1" # Optional
 
 [params]
   dateformat = "Jan 2, 2006" # Optional
   latestSize = 4 # Optional
   ampscripts = """
-<script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
-<script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
-<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
-"""
+  <script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+  <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+  <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+  """
+  github = "https://github.com/meowu"
+
+[params.author]
+  thumbnail = "images/author.jpg"
+  name = "Meowu"
+  description = "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p><p>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+  twitter = "https://twitter.com/luoxiaojie"
+  github = "https://github.com/meowu"

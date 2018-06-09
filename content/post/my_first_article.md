@@ -1,12 +1,14 @@
 ---
 title: "My First Post"
+description: "第一篇文章"
 date: 2017-12-14T11:18:15+08:00
 weight: 70
 keywords: ["hugo"]
-description: "第一篇文章"
 tags: ["Vue", "JavaScript", "SSR"]
 categories: ["技术分享"]
 author: "Meowu"
+# CJKLanguage: Chinese, Japanese, Korean 这样中文摘要才会生效
+isCJKLanguage: true
 # thumbnail = "images/thumbnail.jpg" # Optional, referenced at `$HUGO_ROOT/static/images/thumbnail.jpg`
 ---
 
