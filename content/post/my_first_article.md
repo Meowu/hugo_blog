@@ -7,9 +7,10 @@ keywords: ["hugo"]
 tags: ["Vue", "JavaScript", "SSR"]
 categories: ["技术分享"]
 author: "Meowu"
+draft: true
 # CJKLanguage: Chinese, Japanese, Korean 这样中文摘要才会生效
 isCJKLanguage: true
-# thumbnail = "images/thumbnail.jpg" # Optional, referenced at `$HUGO_ROOT/static/images/thumbnail.jpg`
+thumbnail : "images/jump.jpeg" # Optional, referenced at `$HUGO_ROOT/static/images/thumbnail.jpg`
 ---
 
 使用 `vue` 的时候，如果我们从一个组件切换到另外一个组件，前一个组件就会被销毁，有时候我们可能想要保存前一个组件的状态，这个时候就可以使用 `keep-alive` 把组件包裹从而将其缓存起来。它是一个抽象组件，既不会渲染出一个 `DOM` 元素，也不会出现在组件树中。深入研究`vue` 的源码，我们可以了解到更多细节。
