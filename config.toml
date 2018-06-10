@@ -1,6 +1,4 @@
-# baseURL = "http://localhost"
 languageCode = "zh-CN"
-# title = "My New Hugo Site"
 
 baseurl = "http://fullstackbb.com"
 title = "Meowu's Blog"
