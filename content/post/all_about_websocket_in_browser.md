@@ -74,7 +74,7 @@ socket = new WebSocket(url [, protocols ] )
 
 整个流程图如下：
 
-![websocket_close](http://oyaycf3zq.bkt.clouddn.com/websocket_close.png)
+![websocket_close](/images/websocket_close.png)
 
 **PS:** `websocket` 对象还有一个 `bufferedAmount` 属性，它表示调用了 `send` 方法发送数据，但是尚未完全被传输到网络，停留在任务队列中的数据的字节数。如果浏览器正在发送数据，`close()` 方法不会丢弃之前已发送的但是尚未传输完毕的数据，直到其结束才会开始关闭握手操作。所以在执行 `close` 方法前最好检查一下该属性。
 

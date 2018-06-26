@@ -1,6 +1,6 @@
 languageCode = "zh-CN"
 
-baseurl = "http://fullstackbb.com/"
+baseurl = "https://fullstackbb.com/"
 title = "Meowu's Blog"
 sub_title = "Meowu's Blog"
 theme = "aglaus"
