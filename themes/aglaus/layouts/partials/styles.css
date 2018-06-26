@@ -311,6 +311,10 @@ article.li.sm .header-wrapper {
   margin-bottom: 0;
 }
 
+.article-body {
+  margin-bottom: 30px;
+}
+
 .article-body h2 {
   padding: 1rem 0;
   border-bottom: 2px solid #eceff1;
@@ -385,6 +389,14 @@ article.li.sm .header-wrapper {
   font-style: normal;
   font-weight: 700;
   color: #ff5722;
+}
+
+.article-body table tr td, .article-body table tr th {
+  border: 1px solid #888;
+  padding: .3rem .5rem;
+}
+.article-body table {
+  border-collapse: collapse;
 }
 
 .article-body figure { margin: 1.5rem -2rem; }
