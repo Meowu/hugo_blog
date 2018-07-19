@@ -345,6 +345,10 @@ article.li.sm .header-wrapper {
   padding-left: 1.5rem;
 }
 
+.article-body img {
+  max-width: 100%;
+}
+
 .article-body code {
   display: inline-block;
   font-family: Menlo, consolas, monospace;
@@ -381,9 +385,9 @@ article.li.sm .header-wrapper {
   line-height: 1rem;
 }
 
-.article-body strong {
+/* .article-body strong {
   box-shadow: 0 -.5rem 0 0 #f06292 inset;
-}
+} */
 
 .article-body em {
   font-style: normal;

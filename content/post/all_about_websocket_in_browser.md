@@ -3,7 +3,7 @@ title: "HTML Standard 中关于浏览器的 WebSocket 实现细节"
 date: 2018-06-26T17:57:37+08:00
 # draft: true
 weight: 70
-keywords: ["WebSocket", "HTML Standard", "Browser", "internals"]
+keywords: ["websocket 用法", "WebSocket", "HTML Standard", "Browser", "internals"]
 tags: ["HTML Standard", "BOM"]
 categories: ["技术分享"]
 author: "Meowu"
