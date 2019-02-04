@@ -24,6 +24,9 @@
   <meta name="description" content="{{ default .Summary .Description }}" />
   {{ partial "single_meta.html" . }}
   {{- end }}
+  {{ if not .Site.BuildDrafts }}
+  {{ template "_internal/google_analytics_async.html" . }}
+  {{ end }}
 
   <link
     rel="stylesheet"
@@ -48,4 +51,6 @@
     */
     (function(undefined) {}).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
   </script>
+
+  {{ .Site.Params.extraHead | safeHTML }}
 </head>

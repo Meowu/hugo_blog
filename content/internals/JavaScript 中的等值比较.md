@@ -4,7 +4,7 @@ title: "ECMAScript 中的等值比较"
 date: 2019-02-05T01:29:47+08:00
 weight: 70
 keywords: ["ECMAScript 262", "Specification", "HTML Standard", "Equality Comparison", "internals"]
-tags: ["JavaScript", "BOM"]
+tags: ["ECMAScript 262", "Specification", "HTML Standard", "Equality Comparison", "internals"]
 author: "Meowu"
 # CJKLanguage: Chinese, Japanese, Korean 这样中文摘要才会生效
 isCJKLanguage: true
