@@ -116,10 +116,15 @@ a:hover {
   margin: 12px 0;
 }
 
-.posts-footer {
+.posts-footer footer {
   margin-top: 50px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.posts-footer .posts-footer__socials {
+  display: flex;
 }
 
 .posts-footer-item {
