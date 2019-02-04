@@ -1,27 +1,24 @@
-languageCode = "zh-CN"
-
-baseurl = "https://fullstackbb.com/"
+baseURL = "https://fullstackbb.com/"
+languageCode = "en-us"
 title = "Meowu's Blog"
-sub_title = "Meowu's Blog"
-theme = "aglaus"
-enableRobotsTXT = true
-summaryLength = 150
+theme = "yinyang"
+DefaultContentLanguage = "cn"
 
-googleAnalytics = "UA-120601047-1" # Optional
+[author]
+  name = "Meowu"
+  homepage = "https://fullstackbb.com/"
+
+[languages]
+  [languages.cn]
+    contentDir = "content/"
+    languageName = "Chinese"
+    weight = 2
 
 [params]
-  dateformat = "Jan 2, 2006" # Optional
-  latestSize = 4 # Optional
-  ampscripts = """
-  <script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
-  <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
-  <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
-  """
-  github = "https://github.com/meowu"
-
-[params.author]
-  thumbnail = "images/author.jpg"
-  name = "Meowu"
-  description = "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p><p>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
-  twitter = "https://twitter.com/luoxiaojie"
-  github = "https://github.com/meowu"
+# disqus = "Meowu" # disqus account name
+[[params.socials]]
+name = "About Me"
+link = "https://fullstackbb.com"
+[[params.socials]]
+name = "Github"
+link = "https://github.com/meowu"
