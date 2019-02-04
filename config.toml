@@ -16,6 +16,7 @@ DefaultContentLanguage = "cn"
 
 [params]
 # disqus = "Meowu" # disqus account name
+  bio = 'Saying more with fewer words.'
 [[params.socials]]
 name = "About Me"
 link = "https://fullstackbb.com"
