@@ -37,10 +37,11 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css"
   />
-  <link
+  <!-- <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/tomorrow.min.css"
-  />
+  /> -->
+  <link rel="stylesheet" href="{{ "css/prism/prism-night-owl.css" | relURL }}">
   {{- end }}
   <link rel="stylesheet" href="{{ "css/index.css" | relURL }}">
   <link href="{{ "index.xml" | relURL }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}">
