@@ -1,0 +1,30 @@
+language: go
+
+go:
+- 1.11
+
+install:
+- curl -LO https://github.com/gohugoio/hugo/releases/download/v0.55.4/hugo_0.55.4_Linux-64bit.deb
+- sudo dpkg -i hugo_0.55.4_Linux-64bit.deb
+
+script:
+- hugo --version
+- hugo
+
+addons:
+  ssh_known_hosts: ${DEPLOY_HOST}
+
+before_install:
+- openssl aes-256-cbc -K $encrypted_29d5275cc0c9_key -iv $encrypted_29d5275cc0c9_iv
+  -in id_rsa_blog.enc -out ~\/.ssh/id_rsa_blog -d - chmod 600 ~/.ssh/id_rsa_blog
+
+after_success:
+- scp -i ~/.ssh/id_rsa_blog -P ${DEPLOY_PORT} -r public ${DEPLOY_USER}@${DEPLOY_HOST}:~
+- ssh -i ~/.ssh/id_rsa_blog -p ${DEPLOY_PORT}  ${DEPLOY_USER}@${DEPLOY_HOST} './deploy_blog.sh'
+
+env:
+  global:
+  - PRODUCTION=true
+  - secure: IFjImb8u42xEcDsAoIcEBWUzW1sAi66d4IRjaThmFGVFzs+PUH1phl3sO86hBVqTGblhMJHiPFZCMNi1jUIidUlBctglBqZrdbMv3baVVm5tamDdykSgkoDYdSUHHQQcd+VIgG3KKI0YBn4e0o7R2p17TM71QduaHsyP/znIAWU5RTaJh922SS93j7Uaq4b5M/eyMbjylTfsVmDx8kFAnsPkTzMh2HA6v9X9N16IRaqtSuG8ASqXckfo6MZUqPtNZzzn6yxSB/CGd9JvoWht1HSy+S2I20YnStVoe21KsuXSD0tu3GOUef5OWHP8n7sxU3vvpJ0I9lic7CP6C9/W3Ue4h9ENkjDkC2Nh3Qf8XH1pdbo+F7ygSu+OzEFW4XU1BRs6shyl2psnaM4tx/+HaERzJytPD+0sjBSKidiUNCHlfmplTxgrhtvqw/uD6Y1TrZCsxg4F5wpBI8DW9pij5A8qyGTf36iDdn2Knqkg5wvioBwd2ojPbQhs7r7jfa1+TgNcyKbSta2pNy9CKZMAZpFIvp055bdmn87rCaoEVLzGNx55JHfSXElr+ea1lQCWcL1JXO3WG8w1aRE7lmNAp/3/6opx9z4RliedKUhTcP25m/B/4L+/WxzLsY9iVm2zlzNU4cLJGo6vkZTkQ/K+cRAieMEg5nZUqHjwD3OLjhY=
+  - secure: EdIfUb9I+Lm49rc7d+ZeX9mfloDz5WpNNgTOlHppbCp6IstswN8ooKWmHdJtznwUubd6fMKGYY2flEU+xeRpacpFkrdYRZFNjipmHMb/SN+laIWHX0dUHBXcGRRapJ9vn5KRWisPWPcKBwaiparGu8KTH2mFTsUosMVHjEvxWxUr7yzVLunHSQKV7sUe7K1hPDSJgX8JJRqmH5w8FXQLV/PIFW3cTuqkuyDTTtuHqM9jZE9f5hknGEK9A2v3lugyLy61W9jhHvu8kW2etopd8tWALmAKfY54N4605dD8LtpCc7pO2wUhlksF4BSp4chXxvAi/KjEKJV8xFUq/G6HMCmZG6xNeA/Jsa3qsfqPkJkBQTFJHRwsJzZjO5zsl4A8jn/S8OMfaX3JvoBAC0iiqza1s+B0qmL9J/C6MEiQMxsi8Kv9Qnsc+P0m1vGjtkTOGQ1v0Gjq13eS1ncH9uqlgfdjl/7Zjq9DAmAP3PRUI6VnomQOBQ2ZdWwVFv4mxu/dlyNovHGhKKUFAg/PPaTYo1Mpgga5BjjHdnWiWszNhILRPcXebIMwF4pDLjDmT488M8L9qra87XLMkQG+YEvf5DIXhnzn7/O4mHxr2rgDD04oj8Mr+TY4+syimcnq8S/C8Zc655hZLUaG/COW+g4993s+Up1Qtz4zgbfPxWCVdrY=
+  - secure: M9dXctHMOMvLa5EPaAnSGRsMjQ4bkltBl+ZDAWpH2MuUNTZ4t0dhnxDxL9YlJZ+UwHOM3wFpAf4u4sI46D8itCo9TaYJSXKWuD86G/cIgX8Oxy4aCBNjXY5U3q0oxa4oX4cfnWTMDgw9BTiIiuQh7OVTK/tk9+3a+ipiJMLAA7BwLYHcRYNxP1xHQv09J20m8BvdbiryDW8Dl8RHnYb0CkKYM4AoRu7iD0rSpH7lEELvQ3uOaQFQyW1C9WEprb+dDjUZp0Uor1kWp5k57uluTBpF80F8EPoBK6WKBAHm80IdpMJKd4fg4pRTGTEcKX8HXh17RGaGFNm2NYg7fAZv/ui/J4FIuv/On/T2QwJAKoBkxWeUXtcrgye1KG1toUknK3DqgdCgzTe8qHipV8tS72FTe+bZBczR/+rgjsmytkVEcEmraFTS8DGTRgLlpE2GBlV35+XS4bzOuNk5c4ulg/65lgvfkzBJnRIwq2ZNeR0VIsqiIPY7v+LwMdbMJPQCxCHuQ7RCHh31UnR/l61Tz3eCx7sukxN9KQaoygexENaMJXA5jU0w2ulqKgURK/EK+IuYusHSZ/ws0aZ+RSa0/pxVLXMiYiRfIZx6Vs79M4Le8AaDymgTC3wLxCsBk5UhoSpxOcrub5OSWm9OBxfP0YbJ5QJDRR3ntKXkY8xPzp0=
