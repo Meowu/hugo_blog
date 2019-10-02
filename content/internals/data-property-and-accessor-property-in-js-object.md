@@ -1,7 +1,6 @@
 ---
 title: "重新学习 JS 对象的数据属性和访问器属性"
 date: 2019-10-03T00:10:36+08:00
-draft: true
 keywords: ["JavaScript Object", "data property", "accessor property", "ES6"]
 tags: ["JavaScript", "Internals"]
 categories: ["技术分享"]
