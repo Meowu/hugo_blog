@@ -107,9 +107,9 @@ Set-Cookie: name=Nicholas; HttpOnly
 
 但是它也存在一些限制以及安全问题：
 
-* 大小限制，通常最多 50 个，或者 4096 B 大小，超过的话会被清楚以腾出空间
-* 如果储存了大量 `cookies` ，会导致性能损失
+* 大小限制，通常最多 50 个，或者 4096 B 大小，超过的话会被清除以腾出空间
+* 如果储存了大量 `cookies` ，会导致性能损失·
 * 导致 XSS 和 CSRF 安全问题
 * 隐私泄露
 
-Cookie曾一度用于客户端数据的存储，因当时并没有其它合适的存储办法而作为唯一的存储手段，但现在随着现代浏览器开始支持各种各样的存储方式，Cookie渐渐被淘汰。由于服务器指定Cookie后，浏览器的每次请求都会携带Cookie数据，会带来额外的性能开销（尤其是在移动环境下）。新的浏览器API已经允许开发者直接将数据存储到本地，如使用 [Web storage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API) （本地存储和会话存储）或 [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) 。
+Cookie曾一度用于客户端数据的存储，因当时并没有其它合适的存储办法而作为唯一的存储手段，但现在随着现代浏览器开始支持各种各样的存储方式，Cookie渐渐被淘汰。由于服务器指定Cookie后，浏览器的每次请求都会携带Cookie数据，会带来额外的性能开销（尤其是在移动环境下）。新的浏览器API已经允许开发者直接将数据存储到本地，如使用 [Web storage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API) （本地存储和会话存储）或 [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) 。·
