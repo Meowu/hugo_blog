@@ -97,6 +97,7 @@ User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (
 ```
 在上面的代码中，`POST` 方法符合规则，是一个简单的请求，所以不会发起预检请求。
 不符合简单请求条件的请求我们称为「需预检的请求」。假设我们给刚才的请求加上一个额外的头部 `Content-Type` ，它不属于 `text/plain` `multipart/form-data`  `application/x-www-form-urlencoded`  三者之一，在发起真正请求之前会先发送一个 `OPTIONS` 预检请求到服务器。
+
 ```javascript
 const xhr = new XMLHttpRequest();
         xhr.onreadystatechange = () => {
@@ -113,7 +114,9 @@ const xhr = new XMLHttpRequest();
         xhr.send(null);
 
 ```
+
 `OPTIONS` 请求头部：
+
 ```
 Accept: */*
 Accept-Encoding: gzip, deflate, br
@@ -137,6 +140,7 @@ User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (
 * Access-Control-Max-Age: 这个 OPTIONS 请求缓存多久（以秒表示）
 
 以下是一段简单的使用 `express` 的处理代码：
+
 ```javascript
 const express = require('express');
 const app = express();
@@ -161,12 +165,15 @@ app.use((req, res, next) => {
     next();
 })
 ```
+
 要注意的是，简单请求和预检请求的主要区别在于，是否要发送额外的 `OPTIONS` 请求来检验服务器是否支持发送的方法或者自定义头部。
 ### 带身份凭证的请求
 默认情况下，跨域请求不发送 `cookie` ，如果想要发送凭据，需要为该请求指定  `xhr.withCredentials = true` 。此时，服务器需要在响应中返回：
+
 ```
 Access-Control-Allow-Credentials: true
 ```
+
 否则，请求会被忽略，浏览器不会把响应的内容返回给客户端。此外，对于附带身份凭证的请求，服务器不得设置 `Access-Control-Allow-Origin` 的值为 `*` 。这是因为请求的首部中携带了 Cookie 信息，如果设置 `Access-Control-Allow-Origin: '*'` ，请求将会失败，需要设置 `Access-Control-Allow-Origin: req.headers.origin` 。
 
 
