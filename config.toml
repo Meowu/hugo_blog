@@ -12,15 +12,17 @@ googleAnalytics = "UA-120601047-1" # Optional
 
 [languages]
   [languages.cn]
-    contentDir = "content/"
+    contentDir = "content"
     languageName = "Chinese"
-    weight = 2
+    weight = 1
 
 [params]
 # disqus = "Meowu" # disqus account name
   bio = 'Saying more with fewer words.'
   extraHead = '<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120601047-1"></script>'
   tags = ['front end', 'full stack engineer', 'react', 'vue', 'technology insides', 'thought works']
+  mainSections = ["content"]
+
 [[params.socials]]
 name = "About Me"
 link = "https://fullstackbb.com"
