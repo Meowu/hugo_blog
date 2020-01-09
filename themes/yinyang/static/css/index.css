@@ -23,7 +23,7 @@
 /* global */
 
 body {
-  font-family: "Arvo", Arial, Helvetica, sans-serif;
+  /* font-family: "Arvo", Arial, Helvetica, sans-serif; */
   margin: 0 20px;
 }
 
@@ -50,7 +50,7 @@ a:hover {
 /* i18n */
 
 .Chinese .markdown-body {
-  line-height: 200%;
+  line-height: 1.625;
 }
 
 /* fonts */
@@ -131,8 +131,6 @@ a:hover {
   margin-right: 12px;
 }
 
-/* post */
-
 .post img {
   max-width: 100%;
   display: block;
@@ -142,8 +140,9 @@ a:hover {
 }
 
 .post-count {
-  margin: 5px 0 0;
-  color: #b2b9be;
+  margin: 10px 0 0;
+  font-weight: 600;
+  /* color: #b2b9be; */
   font-size: 14px;
   letter-spacing: 1px;
   max-width: 100%;
@@ -156,7 +155,7 @@ a:hover {
 }
 
 .post-header {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .post-title {

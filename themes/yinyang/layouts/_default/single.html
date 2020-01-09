@@ -15,10 +15,10 @@
             <div class="row">
               <div class="col-xs-6 post-count">
                 <time class="post-date" datetime="{{ .Date.Format "2006-01-02 15:04:05 MST" }}">
-                  {{ .Date.Format "02 Jan 2006 15:06" }}
+                  {{ .Date.Format "Jan 02, 2006" }}
                 </time>
-                · {{ if lt 1 .WordCount }}{{ .WordCount }} words{{ else }}{{ .WordCount }} word{{ end }}
-                · {{ .ReadingTime }} minute read
+                <!-- · {{ if lt 1 .WordCount }}{{ .WordCount }} words{{ else }}{{ .WordCount }} word{{ end }}
+                · {{ .ReadingTime }} minute read -->
               </div>
               <div class="col-xs-6">
                 <div class="post-author">
