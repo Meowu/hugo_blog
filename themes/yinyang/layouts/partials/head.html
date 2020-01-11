@@ -27,13 +27,13 @@
   {{ if not .Site.BuildDrafts }}
   {{ template "_internal/google_analytics_async.html" . }}
   {{ end }}
+  <link rel="stylesheet" href="{{ "css/flexboxgrid@6.3.1.min.css" | relURL }}">
   {{ if not .IsHome -}}
   <link rel="stylesheet" href="{{ "css/github-markdown@2.10.0.min.css" | relURL }}">
   <!-- <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/tomorrow.min.css"
   /> -->
-  <link rel="stylesheet" href="{{ "css/flexboxgrid@6.3.1.min.css" | relURL }}">
   <link rel="stylesheet" href="{{ "css/prism/prism-night-owl.css" | relURL }}">
   {{- end }}
   <link rel="stylesheet" href="{{ "css/index.css" | relURL }}">
