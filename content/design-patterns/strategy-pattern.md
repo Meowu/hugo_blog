@@ -99,6 +99,6 @@ console.log("price of agency3", travel.getPrice())
 
 1. [Strategy pattern](https://en.wikipedia.org/wiki/Strategy_pattern)
 
-2. [《设计模式》](Design Patterns: Elements of Reusable Object-Oriented Software)
+2. [《设计模式》](https://book.douban.com/subject/1052241/)
 
    ​
