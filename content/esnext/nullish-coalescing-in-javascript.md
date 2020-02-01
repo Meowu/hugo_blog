@@ -1,7 +1,6 @@
 ---
 title: "JS 新特性：空值合并运算符的使用"
 date: 2020-01-31T21:36:36+08:00
-draft: true
 keywords: ["nullish-coalescing", "es2020", "空值合并运算符", "javascript", "optional-chaining"]
 tags: ["JavaScript"]
 categories: ["技术分享"]
