@@ -1,16 +1,24 @@
 <div class="profile col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
-  <section id="wrapper">
-    <header id="header">
-      <!-- <a href='{{ with .Site.Params.avatarLink }}{{ . }}{{ else }}{{ .Site.BaseURL }}about{{ end }}'>
-        <img id="avatar" class="2x" src="{{ .Site.BaseURL }}images/avatar.jpg"/>
-      </a> -->
-      <a href='/'>
-        <img id="avatar" class="2x" src="{{ .Site.BaseURL }}images/avatar.jpg"/>
-      </a>
-      <h1>
-        <a target="_blank" href="{{ .Site.Author.homepage }}">@{{ .Site.Author.name }}</a>
-      </h1>
-      {{ with .Site.Params.bio }}<h2>{{ . | markdownify }}</h2>{{ end }}
-    </header>
-  </section>
+  <header id="header" class="main">
+    <div class="signatures site-title">
+      <a href="{{ .LanguagePrefix }}/">{{ .Site.Author.name }}</a>
+    </div>
+    <div class="site-social">
+        {{ range .Site.Params.social }}
+          <a style="display: inline-block;" href="{{ .url | safeURL }}" title="{{ print .name }}" target="_blank" aria-label="{{ .identifier }}">
+            {{ partial (print "svgs/social/"  .identifier  ".svg") (dict "width" 25 "height" 25) }}
+          </a>
+        {{ end }}
+      </ul>
+    </div>
+    <div class="site-navigation">
+      <ul>
+        {{ range .Site.Params.navigation }}
+          <li>
+            <a href="{{ .link }}" target="_blank">{{ .name }}</a>
+          </li>
+        {{ end }}
+      </ul>
+    </div>
+  </header>
 </div>

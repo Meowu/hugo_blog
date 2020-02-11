@@ -78,13 +78,20 @@ a:hover {
   margin: 12px 0;
 }
 
+/* .site-social {
+  te
+} */
+
 .site-date-catalog {
   font-size: 2rem;
 }
 
+.main {
+  text-align: center;
+}
+
 .signatures {
   font-family: "Permanent Marker", Impact, Charcoal, sans-serif;
-  text-align: center;
 }
 
 .signatures a {
