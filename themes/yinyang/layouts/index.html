@@ -44,26 +44,24 @@
                 <footer class="l-footer">
                   <div class="l-container">
                     <aside>
-                      <p class="l-footer-p">{{ with .Site.Copyright }}{{ . | safeHTML }}{{ else }}<span class="h-logo" style="margin-right: 20px;">&copy; {{ .Site.Title }}</span>{{ end }}
+                      <div class="posts-footer-item" style="text-align: center;">
+                        <span class="posts-footer-age" style="margin-right: 20px;"></span>
+                        <a href="http://beian.miit.gov.cn" style="text-decoration: underline;" target="_blank">粤 ICP 备 18057742 号</a>
+                      </div>
+                      <!-- <p class="l-footer-p">{{ with .Site.Copyright }}{{ . | safeHTML }}{{ else }}<span class="h-logo" style="margin-right: 20px;">&copy; {{ .Site.Title }}</span>{{ end }}
                         Powered by <a href="https://gohugo.io/">Hugo</a>
-                      </p>
-                      <!-- <p><a href="https://github.com/dim0627/hugo_theme_aglaus" class="h-logo">Aglaus</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p> -->
+                      </p> -->
                     </aside>
                   </div>
-                  <div class="posts-footer__socials">
+                  <!-- <div class="posts-footer__socials">
                     {{ range .Site.Params.socials }}
                     <div class="posts-footer-item">
                       <a href="{{ .link }}" target="_blank">{{ .name }}</a>
                     </div>
                     {{ end }}
-                  </div>
+                  </div> -->
                 </footer>
-<!--                <div class="posts-footer-item">-->
-<!--                  <a href="https://github.com/joway/hugo-theme-yinyang" target="_blank">Theme</a>-->
-<!--                </div>-->
-                <div class="posts-footer-item" style="text-align: center;">
-                  <a href="http://beian.miit.gov.cn" target="_blank">粤 ICP 备 18057742 号</a>
-                </div>
+                
               </div>
             </div>
           </div>

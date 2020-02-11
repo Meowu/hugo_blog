@@ -75,7 +75,7 @@ a:hover {
 
 .site-title {
   font-size: 3rem;
-  margin-top: 32px;
+  margin: 12px 0;
 }
 
 .site-date-catalog {
@@ -84,6 +84,7 @@ a:hover {
 
 .signatures {
   font-family: "Permanent Marker", Impact, Charcoal, sans-serif;
+  text-align: center;
 }
 
 .signatures a {

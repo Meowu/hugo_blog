@@ -9,7 +9,7 @@
 {{ if and .Site.Params.lazyImage (not .IsHome) -}}
 <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@10.19.0/dist/lazyload.min.js"></script>
 <script>
-  var lazyImage = new LazyLoad({
+  const lazyImage = new LazyLoad({
     container: document.getElementById('article')
   });
 </script>
@@ -17,9 +17,12 @@
 <script>
   // hljs.initHighlightingOnLoad();
   
-  var posts = document.getElementById('posts-list');
+  const posts = document.getElementById('posts-list');
   posts && quicklink({
     el: posts,
     priority: true,
   });
+
+  const footer = document.querySelector('.posts-footer-age');
+  footer.textContent = '©2018-' + new Date().getFullYear();
 </script>
