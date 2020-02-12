@@ -1,8 +1,9 @@
 baseURL = "https://fullstackbb.com/"
 languageCode = "en-us"
-title = "Meowu's Blog"
+title = "Meowu's Web Blog"
 theme = "yinyang"
 DefaultContentLanguage = "cn"
+# sectionPagesMenu = "main"
 
 googleAnalytics = "UA-120601047-1" # Optional
 
@@ -20,12 +21,51 @@ googleAnalytics = "UA-120601047-1" # Optional
 # disqus = "Meowu" # disqus account name
   bio = 'Saying more with fewer words.'
   extraHead = '<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120601047-1"></script>'
-  tags = ['front end', 'full stack engineer', 'react', 'vue', 'technology insides', 'thought works']
+  tags = ['front end', 'TypeScript', 'full stack engineer', 'react', 'vue', 'technology insides', 'thought works']
   mainSections = ["content"]
+[menu]
 
-[[params.socials]]
-name = "About Me"
-link = "https://fullstackbb.com"
-[[params.socials]]
-name = "Github"
-link = "https://github.com/meowu"
+[[menu.main]]
+  name = "Home"
+  identifier = "home"
+  url = '/'
+  link = "https://github.com/meowu"
+  weight = 1
+[[menu.main]]
+  name = "About"
+  identifier = "about"
+  url = "/about"
+  link = "https://fullstackbb.com/about"
+
+[[menu.main]]
+  name = "Books"
+  identifier = "books"
+  url = '/books'
+  link = "https://github.com/meowu"
+
+[[menu.main]]
+  name = "Projects"
+  identifier = "projects"
+  url = "/projects"
+  link = "https://github.com/meowu"
+
+[[params.social]]
+  identifier = "twitter"
+  url = "https://twitter.com/luoxiaojie"
+  name = "Twitter"
+  pre = "<i class='fab fa-twitter fa-lg'></i>"
+  weight = 20
+
+[[params.social]]
+  identifier = "github"
+  url = "https://github.com/meowu"
+  name = "GitHub"
+  pre = "<i class='fab fa-github fa-lg'></i>"
+  weight = 30
+
+[[params.social]]
+  identifier = "email"
+  name = "Email"
+  pre = "<i class='fa fa-envelope fa-lg'></i>"
+  url = "mailto:474384902@qq.com"
+  weight = 40

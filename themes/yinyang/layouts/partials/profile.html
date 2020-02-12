@@ -11,7 +11,8 @@
         {{ end }}
       </ul>
     </div>
-    <div class="site-navigation">
+    {{ partial "nav.html" . }}
+    <!-- <div class="site-navigation">
       <ul>
         {{ range .Site.Params.navigation }}
           <li>
@@ -19,6 +20,6 @@
           </li>
         {{ end }}
       </ul>
-    </div>
+    </div> -->
   </header>
 </div>
