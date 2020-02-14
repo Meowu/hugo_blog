@@ -99,7 +99,7 @@ a:hover {
 }
 
 .head-line {
-  height: 3px;
+  height: 2px;
   width: 100%;
   background-color: #222;
   margin: 20px 0;
@@ -169,6 +169,11 @@ a:hover {
 .post-title {
   font-size: 2rem;
   font-weight: 600;
+}
+
+/* 只会在内容下方有下划线，即便内容没有占满一行。 */
+.posts-title {
+  text-decoration: underline;
 }
 
 .post-content {
