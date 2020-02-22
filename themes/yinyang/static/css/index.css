@@ -51,6 +51,9 @@ a:hover {
 
 .Chinese .markdown-body {
   line-height: 1.625;
+  text-align: justify;
+  word-break: break-all;
+  color: #233;
 }
 
 /* fonts */
