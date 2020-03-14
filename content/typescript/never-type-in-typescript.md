@@ -5,7 +5,6 @@ keywords: ["typescript", "never type", "void type", "basic type", "TypeScript �
 tags: ["TypeScript", "JavaScript",  "Programming Language"]
 categories: ["技术分享"]
 author: "Meowu"
-draft: true
 ---
 
 从 [TypeScript 2.0](https://github.com/Microsoft/TypeScript/pull/8652)起引入了 `never` 类型，它作为 TS 中的[Bottom Type](https://en.wikipedia.org/wiki/Bottom_type)用来表示当前不能返回值。它跟我们之前介绍过的 [void 类型 ](https://fullstackbb.com/typescript/void-type-in-typescript/) 的区别在于，`void` 表示的是返回为空（`undefined`），实际上是有返回值的，而`never`表示的是永不返回。
