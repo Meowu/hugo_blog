@@ -31,6 +31,7 @@ const exit = () => {
 ```
 
 2. 它是任何类型的子类型，所以可以指派在任何需要其它返回值的地方，然而任何类型都不是它的子类型，所以只有 `never` 才能指派在需要 `never` 的地方。
+
 ```typescript
 const v1: never = 1; // error
 const v2: number = fail(); // ok
@@ -46,6 +47,7 @@ test(fail()); // ok
 ```
 
 3. 如果一个函数显式定义了返回 `never` 类型，那么它所有的 `return` 语句只能返回 `never` ，如果没有 `return` 语句，函数也必须是无法正常结束的。这跟「只有 never 才能指派给 never」这个条件也是吻合的。
+
 ```typescript
 // Type '1' is not assignable to type 'never'.
 function f1(): never {
@@ -81,7 +83,10 @@ function foo(x: string | number): boolean {
 ```
 
 在 `f4` 的 `else` 条件分支中，`x` 的类型将会被推断为 `never`。而对于 `foo` 函数，如果我们想要函数的返回类型是 `boolean`， 我们在最后一个 `return` 语句必须返回 `never` 类型或者 `boolean` 类型，否则将会出现跟 `boolean`类型不匹配的错误。由此可以看出， _**当我们想要编译器不捕获当前值或者类型时，我们可以返回 `never` 类型**_ 。
+
+
 5. 类型 `T` 和 `never` 的联合类型是 `T` ，而它们的交叉类型则是 `never` 。
+
 ```typescript
 type t1 = string | number;
 type t2 = t1 & never; // never;
@@ -90,6 +95,7 @@ type t3 = t1 | never; // string | number;
 
 ## 使用 never
 大多数情况我们并不需要手动定义 `never` 类型，只有在写一些非常复杂的类型和类型工具方法，或者为一个库定义类型等情况下才需要用到它，从 `TypeScript` 的标准库等一些类型方法中我们可以略窥一二。
+
 ```typescript
 /**
  * Exclude from T those types that are assignable to U
@@ -106,6 +112,7 @@ type Extract<T, U> = T extends U ? T : never;
  */
 type NonNullable<T> = T extends null | undefined ? never : T;
 ```
+
 记住我们前面说的那句话， _**当我们想要编译器不捕获当前值或者类型时，我们可以返回 `never`类型**_ 。从这几个方法可以明显地体现出来，当它们想要捕获一些类型并且忽略其它类型等，就在要忽略的地方返回 `never` 类型，也就是**这里不返回任何东西**。
 基于上面的特性5，我们可以利用 `never` 来做一些更复杂的事情：
 ```typescript
@@ -115,6 +122,7 @@ type Foo = { a: string, b: number, c: boolean };
 type FooWithoutB = Pick<Foo, Diff<keyof Foo, 'b'>>;
 // equivalent to { a: string, c: boolean }
 ```
+
 该类型方法接受两个字符串的联合类型 `T` 和 `U`，返回一个包含所有存在 `T` 中但同时不存在 `U`中的值的联合类型。
 
 ## 一点注意
