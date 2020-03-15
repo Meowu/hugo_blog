@@ -41,7 +41,7 @@ function f(this:void) {
 }
 ```
 
-在一个全局定义的独立函数中，它的 `this` 值默认激素 `global` ，在这个函数内使用 `this` 是没有任何意义的，所以我们可以显式定义 `this: void` 表示这里不需要使用 `this` 。
+在一个全局定义的独立函数中，它的 `this` 值默认值是 `global` ，在这个函数内使用 `this` 是没有任何意义的，所以我们可以显式定义 `this: void` 表示这里不需要使用 `this` 。
 
 来看一个更具体一点的[例子](https://www.typescriptlang.org/docs/handbook/functions.html#this)：
 

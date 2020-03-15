@@ -101,6 +101,10 @@ a:hover {
   text-decoration: none;
 }
 
+.markdown-body ul, .markdown-body ol {
+  padding-left: 0;
+}
+
 .head-line {
   height: 2px;
   width: 100%;

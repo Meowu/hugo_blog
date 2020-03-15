@@ -14,7 +14,7 @@ author: "Meowu"
 `never` 主要有以下一些特性：
 
 1. 在**函数表达式**或者**箭头函数**中，如果一个函数没有显式定义返回类型，它也没有 `return` 语句，或者说 `return` 的类型是 `never` ，并且该函数没有执行完毕时，它的返回类型会被推断为 `never` 。
-2. 
+
 ```typescript
 const error = (msg) => throw new Error(msg); // never
 
@@ -29,6 +29,7 @@ const exit = () => {
   process.exit();
 }
 ```
+
 2. 它是任何类型的子类型，所以可以指派在任何需要其它返回值的地方，然而任何类型都不是它的子类型，所以只有 `never` 才能指派在需要 `never` 的地方。
 ```typescript
 const v1: never = 1; // error
@@ -43,6 +44,7 @@ test(() => "of course"); // ok
 test(error('oops.')); // yes
 test(fail()); // ok
 ```
+
 3. 如果一个函数显式定义了返回 `never` 类型，那么它所有的 `return` 语句只能返回 `never` ，如果没有 `return` 语句，函数也必须是无法正常结束的。这跟「只有 never 才能指派给 never」这个条件也是吻合的。
 ```typescript
 // Type '1' is not assignable to type 'never'.
@@ -56,7 +58,9 @@ function f2(): never {
 }
 
 ```
+
 4. 在做条件语句分析时，在一个永远不可能为 true 的分支中，类型会被推断为 `never` 或者返回值必须是 `never` 。
+
 ```typescript
 function f4(x: A | B) {
   if(isA(x)) {
@@ -75,6 +79,7 @@ function foo(x: string | number): boolean {
   return fail();
 }
 ```
+
 在 `f4` 的 `else` 条件分支中，`x` 的类型将会被推断为 `never`。而对于 `foo` 函数，如果我们想要函数的返回类型是 `boolean`， 我们在最后一个 `return` 语句必须返回 `never` 类型或者 `boolean` 类型，否则将会出现跟 `boolean`类型不匹配的错误。由此可以看出， _**当我们想要编译器不捕获当前值或者类型时，我们可以返回 `never` 类型**_ 。
 5. 类型 `T` 和 `never` 的联合类型是 `T` ，而它们的交叉类型则是 `never` 。
 ```typescript
