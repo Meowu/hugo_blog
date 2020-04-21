@@ -12,7 +12,7 @@ T extends U ? X : Y
 ```
 跟 JS 中的条件表达式一样，如果`extends`语句为真，则取`X`类型 ，反之得到`Y`类型 。我们这里把`X`称为条件类型的**真分支**，`Y` 称为**假分支**。
 
-现在，在 [TypeScript 2.8](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-8.html) 之后，我们可以在 `extends` 条件语句中使用`infer`关键字引入一个**变量**表示推断的类型，这个变量可以被用在**真分支**中，也就是说`infer`实际上是一个**声明**关键字，我们可以用它来声明一个变量，而该变量表示的是类型。以标准库的 `ReturnType` 为例：
+现在，在 [TypeScript 2.8](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-8.html) 之后，我们可以在 `extends` 条件语句中使用`infer`关键字引入一个**变量**表示推断的类型，这个变量可以被用在**真分支**中，也就是说`infer`实际上是一个**声明**关键字，我们可以用它来声明一个变量，而该变量表示的是 `infer` 所处位置的类型。以标准库的 `ReturnType` 为例：
 ```typescript
 type ReturnType<T extends (...args: any) => any> = T extends (...args: any) => infer R ? R : any;
 
@@ -21,7 +21,7 @@ const getFullName = (firstName: string, lastName: string): string {
 }
 const fullName: ReturnType<typeof getFullName> = getFullName('foo', 'bar');
 ```
-这里`ReturnType<T>`接收一个任意函数，在`extends`分支把推断的函数返回值的类型赋给变量`R`，从而得到该类型。这里需要注意的是，我们**只能在`extends`语句中**使用`infer`关键字，不能在诸如类型参数这样的地方使用它：
+这里`ReturnType<T>`接收一个任意函数，在`extends`分支把推断的函数返回值的类型赋给变量`R`，从而得到该类型。这里需要注意的是，我们**只能在`extends` 条件语句中**使用`infer`关键字，不能在诸如类型参数这样的地方使用它：
 ```typescript
 type ReturnType<T extends (...args: any[]) => infer R> = R;  // Error.
 ```
