@@ -1,5 +1,5 @@
 ---
-title: "Ambient Declaration in Typescript"
+title: "[Typescript] TS 的环境声明(ambient declaration)"
 date: 2020-04-30T20:06:57+08:00
 keywords: ["TypeScript ambient declaration", "TypeScript 环境声明", "模块声明", "typescript3.7", "TypeScript命名空间声明", "typescript for beginners", "learn typescript", "static type check", "dive into typescript"]
 tags: ["TypeScript", "JavaScript",  "Programming Language"]
