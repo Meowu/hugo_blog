@@ -86,6 +86,7 @@ declare enum Status {
 ```
 
 2. 不包含 `const` 修饰符的环境 enum 声明，如果枚举成员没有指定值，那么它将会被视为是计算成员，而不是指定一个自增的值。
+
 ```typescript
 declare enum Foo {
   X, // Computed
@@ -96,6 +97,7 @@ declare enum Foo {
 ```
 
 如果有多个 `enum` 声明了相同的名称，它们之间不能存在命名冲突，并且最后所有成员会被合并成同一个 `enum` 。
+
 
 ### 命名空间声明
 
@@ -118,6 +120,7 @@ declare namespace Foo {
 }
 
 ```
+
 
 ### 模块声明
 
