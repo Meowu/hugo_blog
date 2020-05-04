@@ -127,7 +127,7 @@ declare namespace Foo {
 模块声明的语法如下：
 
 ```bash
-AmbientModuleDeclaration:     declare module StringLiteral { DeclarationModule } 
+AmbientModuleDeclaration:  declare module StringLiteral { DeclarationModule } 
 
 ```
 
