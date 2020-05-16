@@ -1,7 +1,6 @@
 ---
 title: "HTML Standard 中关于浏览器的 WebSocket 实现细节"
 date: 2018-06-26T17:57:37+08:00
-# draft: true
 weight: 70
 keywords: ["websocket 用法", "WebSocket", "HTML Standard", "Browser", "internals"]
 tags: ["HTML Standard", "BOM"]
@@ -40,9 +39,7 @@ socket = new WebSocket(url [, protocols ] )
 当一个 `websocket` 对象被创建的时候，它的 `readyState` 一定是 `CONNECTING` 的，同时 `extensions` 和 `protocol` 属性都是空字符串，当连接建立后可能会发生改变。此外， `websocket` 对象还有一个属性 `binaryType` 此时它必须被设置被 `blob` ，可以获取或者改变它的值。<u>浏览器可以使用该属性作为指示来处理获取到的二进制数据，如果属性设为 `blob` ，可以安全地将其存到磁盘中；如果属性设为 `arraybuffer` 可能储存在内存中更加高效。</u>
 
 
-
 `websocket` 能够接收 `string` `Blob` 和 `arraybuffer` 这三种数据。 到了 `Gecko 11.0`，实现了接受 `ArrayBuffer`的参数的方法，但接收 [`Blob`](https://developer.mozilla.org/zh-CN/docs/Web/API/Blob)数据类型的方法没有被实现。
-
 
 
 当一个 `websocket` 连接建立之后，浏览器会按照队列的形式依次执行以下任务：
