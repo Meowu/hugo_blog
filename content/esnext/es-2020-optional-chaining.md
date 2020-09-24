@@ -93,7 +93,7 @@ let nextItem = dataList?.[++index];
 
 在可选链执行时，遵循短路运算的逻辑，当 `?.` 左边的为 	`null` 或者 `undefined` 时，右边的并不会被计算，也就是 `index` 不会加 1 。
 
-跟空值合运算符结合起来用可以让我们很方便地指定一个默认值：
+跟空值合并运算符 (nullish-coalescing) 结合起来用可以让我们很方便地指定一个默认值：
 
 ```javascript
 const userName = User?.name ?? 'Unknown';
