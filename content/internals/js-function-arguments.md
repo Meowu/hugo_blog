@@ -4,7 +4,6 @@ date: 2020-11-25T19:54:16+08:00
 keywords: ["ECMAScript 262", "HTML Standard Specification", "JS 的 arguments 对象", "JavaScript arguments", "internals"]
 tags: ["ECMAScript 262", "Specification", "HTML Standard", "JavaScript", "internals"]
 categories: ["技术分享"]
-draft: true
 ---
 
 在 `JavaScript` 中，我们可以通过 `Function.length` 来得到函数签名中参数的个数，如果要知道实际参数的个数，在**非箭头函数**中，我们可以从函数内部的局部变量 `arguments` 对象得知。它包含了传递给函数的全部参数，是一个类数组对象，我们可以通过下标（例如 `arguments[0]`）来取得其中参数，`arguments.length` 得到传递的参数个数。
