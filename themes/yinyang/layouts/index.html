@@ -1,69 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  {{ partial "head.html" . }}
-  {{ $curLanguageName := .Site.Language.LanguageName }}
+{{ partial "head.html" . }} {{ $curLanguageName := .Site.Language.LanguageName }}
 
-  <body>
+<body>
     <article class="posts">
-      {{ partial "profile.html" . }}
-      <!-- {{ partial "nav.html" . }} -->
+        {{ partial "profile.html" . }}
+        <!-- {{ partial "nav.html" . }} -->
         <div class="row">
             <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
-              <div class="row">
-                {{ range .Site.Languages -}}
-                {{ if ne .LanguageName $curLanguageName }}
-                <div class="lang-switch col-xs-3 col-xs-offset-9">
-                  <a href="/{{ .Lang }}/">{{ .LanguageName }}</a>
+                <div class="row">
+                    {{ range .Site.Languages -}} {{ if ne .LanguageName $curLanguageName }}
+                    <div class="lang-switch col-xs-3 col-xs-offset-9">
+                        <a href="/{{ .Lang }}/">{{ .LanguageName }}</a>
+                    </div>
+                    {{ end }} {{ end }}
                 </div>
-                {{ end }}
-                {{ end }}
-              </div>
-              <div id="posts-list">
-                {{ range .Site.RegularPages.GroupByDate "2006" -}}
-                <section>
-                  <h1 class="site-date-catalog">{{ .Key }}</h1>
+                <div id="posts-list">
+                    {{ range .Site.RegularPages.GroupByDate "2006" -}}
+                    <section>
+                        <h1 class="site-date-catalog">{{ .Key }}</h1>
 
-                  {{ range .Pages }}
-                  <div class="row post-line">
-                    <div class="posts-date col-xs-2">
-                      <time datetime="{{ .Date.Format "2006-01-02 15:04:05 MST" }}">{{ .Date.Format "Jan 02"}}</time>
-                    </div>
-                    <div class="posts-title col-xs-10">
-                      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                    </div>
-                  </div>
-                  {{ end }}
-                </section>
-                {{ end }}
-              </div>
+                        {{ range .Pages }}
+                        <div class="row post-line">
+                            <div class="posts-date col-xs-2">
+                                <time datetime="{{ .Date.Format " 2006-01-02 15:04:05 MST " }}">{{ .Date.Format "Jan 02"}}</time>
+                            </div>
+                            <div class="posts-title col-xs-10">
+                                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                            </div>
+                        </div>
+                        {{ end }}
+                    </section>
+                    {{ end }}
+                </div>
 
-              <div class="posts-footer">
-                <footer class="l-footer">
-                  <div class="l-container">
-                    <aside>
-                      <div class="posts-footer-item" style="text-align: center;">
-                        <span class="posts-footer-age" style="margin-right: 20px;"></span>
-                        <a href="http://beian.miit.gov.cn" style="text-decoration: underline;" target="_blank">粤 ICP 备 18057742 号</a>
-                      </div>
-                      <!-- <p class="l-footer-p">{{ with .Site.Copyright }}{{ . | safeHTML }}{{ else }}<span class="h-logo" style="margin-right: 20px;">&copy; {{ .Site.Title }}</span>{{ end }}
+                <div class="posts-footer">
+                    <footer class="l-footer">
+                        <div class="l-container">
+                            <aside>
+                                <div class="posts-footer-item" style="text-align: center;">
+                                    <span class="posts-footer-age" style="margin-right: 20px;"></span>
+                                </div>
+                                <!-- <p class="l-footer-p">{{ with .Site.Copyright }}{{ . | safeHTML }}{{ else }}<span class="h-logo" style="margin-right: 20px;">&copy; {{ .Site.Title }}</span>{{ end }}
                         Powered by <a href="https://gohugo.io/">Hugo</a>
                       </p> -->
-                    </aside>
-                  </div>
-                  <!-- <div class="posts-footer__socials">
+                            </aside>
+                        </div>
+                        <!-- <div class="posts-footer__socials">
                     {{ range .Site.Params.socials }}
                     <div class="posts-footer-item">
                       <a href="{{ .link }}" target="_blank">{{ .name }}</a>
                     </div>
                     {{ end }}
                   </div> -->
-                </footer>
-                
-              </div>
+                    </footer>
+
+                </div>
             </div>
-          </div>
+        </div>
     </article>
 
     {{ partial "scripts.html" . }}
-  </body>
+</body>
+
 </html>
