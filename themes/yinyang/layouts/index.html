@@ -26,7 +26,18 @@
                                 <time datetime="{{ .Date.Format " 2006-01-02 15:04:05 MST " }}">{{ .Date.Format "Jan 02"}}</time>
                             </div>
                             <div class="posts-title col-xs-9 col-sm-10">
-                                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                                <div class="row">
+                                    <div class="col-xs-11 col-sm-10">
+                                        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                                    </div>
+                                    <div class="col-xs-1 col-sm-2 posts-categories">
+                                        {{ range .Params.categories }}
+                                        <div class="posts-category">
+                                            <a href="/categories/{{ lower . }}/"><strong>{{ . }}</strong></a>
+                                        </div>
+                                        {{ end }}
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         {{ end }}
