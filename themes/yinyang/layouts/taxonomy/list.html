@@ -10,47 +10,34 @@
 
       <h1 class="taxonomy-term">{{.Data.Term}}</h1>
 
-<!--      <div id="posts-list">-->
-<!--        {{ range (where .Data.Pages "Type" "in" site.Params.mainSections).GroupByDate "2006" -}}-->
-<!--        <section>-->
-<!--          <h1 class="site-date-catalog">{{ .Key }}</h1>-->
-
-<!--          {{ range .Pages }}-->
-<!--          <div class="row posts-line">-->
-<!--            <div class="posts-date col-xs-2">-->
-<!--              <time datetime="{{ .Date.Format "2006-01-02 15:04:05 MST" }}">{{ .Date.Format "Jan 02"}}</time>-->
-<!--            </div>-->
-<!--            <div class="posts-title col-xs-10">-->
-<!--              <div class="row">-->
-<!--                <div class="col-xs-12">-->
-<!--                  <a href="{{ .RelPermalink }}">{{ .Title }}</a>-->
-<!--                </div>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--          {{ end }}-->
-<!--        </section>-->
+      <div id="posts-list">
+<!--        <h1>{{ .Title | title }}</h1>-->
+<!--        {{ $taxonomies := index .Site.Taxonomies .Page.Type }}-->
+<!--        {{ range $taxonomies }}-->
+<!--        <div><a href="{{ .Page.Permalink }}">{{ .Page.Title }} <sup>{{ .Count }}</sup></a></div>-->
 <!--        {{ end }}-->
-<!--      </div>-->
 
+        {{ range (where .Data.Pages "Type" "in" .Site.Taxonomies.categories).GroupByDate "2006" -}}
+        <section>
+          <h1 class="site-date-catalog">{{ .Key }}</h1>
 
-<!--            <main>-->
-<!--              <article>-->
-<!--                <header>-->
-<!--                  <h1>{{.Title}}</h1>-->
-<!--                </header>-->
-<!--                &lt;!&ndash; "{{.Content}}" pulls from the markdown content of the corresponding _index.md &ndash;&gt;-->
-<!--                {{.Content}}-->
-<!--              </article>-->
-<!--              <ul>-->
-<!--                &lt;!&ndash; Ranges through content/posts/*.md &ndash;&gt;-->
-<!--                {{ range .Pages }}-->
-<!--                <li>-->
-<!--                  <a href="{{.Permalink}}">{{.Date.Format "2006-01-02"}} | {{.Title}}</a>-->
-<!--                </li>-->
-<!--                {{ end }}-->
-<!--              </ul>-->
-<!--            </main>-->
+          {{ range .Pages }}
+          <div class="row posts-line">
+            <div class="posts-date col-xs-2">
+              <time datetime="{{ .Date.Format "2006-01-02 15:04:05 MST" }}">{{ .Date.Format "Jan 02"}}</time>
+            </div>
+            <div class="posts-title col-xs-10">
+              <div class="row">
+                <div class="col-xs-12">
+                  <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          {{ end }}
+        </section>
+        {{ end }}
+      </div>
 
     </div>
   </div>
