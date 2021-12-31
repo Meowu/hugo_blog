@@ -15,19 +15,32 @@
 
 /* latin */
 
+
 /*@font-face {*/
+
+
 /*    font-family: 'Permanent Marker';*/
+
+
 /*    font-style: normal;*/
+
+
 /*    font-weight: 400;*/
+
+
 /*    src: local('Permanent Marker Regular'), local('PermanentMarker-Regular'), url(https://fonts.gstatic.com/s/permanentmarker/v7/Fh4uPib9Iyv2ucM6pGQMWimMp004La2Cf5b6jlg.woff2) format('woff2');*/
+
+
 /*    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;*/
+
+
 /*}*/
 
 
 /* global */
 
 body {
-     /*font-family: "Arvo", Arial, Helvetica, sans-serif;*/
+    /*font-family: "Arvo", Arial, Helvetica, sans-serif;*/
     /*font-family: bree serif,sans-serif;*/
     font-family: 'Open Sans', 'Permanent Marker', sans-serif;
     margin: 0 20px;
@@ -87,10 +100,18 @@ a:hover {
 
 /* header */
 
+
 /*.site-title {*/
+
+
 /*    font-size: 3rem;*/
+
+
 /*    margin: 12px 0;*/
+
+
 /*}*/
+
 .site-title {
     font-size: 3rem;
     font-weight: bold;
@@ -112,8 +133,13 @@ a:hover {
     text-align: center;
 }
 
+
 /*.signatures {*/
+
+
 /*    font-family: "Permanent Marker", Impact, Charcoal, sans-serif;*/
+
+
 /*}*/
 
 .signatures a {
@@ -286,6 +312,12 @@ a:hover {
 .profile #header {
     text-align: center;
     position: relative;
+}
+
+::selection {
+    background-color: black;
+    color: white;
+    text-shadow: none;
 }
 
 @media screen and (max-width: 600px) {
