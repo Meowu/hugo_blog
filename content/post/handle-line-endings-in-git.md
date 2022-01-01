@@ -14,8 +14,8 @@ author: "Meowu"
 ## 换行符
 我们在输入文字的过程中一般通过按下回车键来进行换行，此时会在行末插入一个看不见的换行符。这个换行符主要有以下两种：
 
-*  **Windows** ： *CR(carriage return)*， (character : \r, Unicode : U+000D, ASCII : 13, hex : 0x0d)
-*  **Linux  & macOS** ： *LF(line feed)* ， (character : \n, Unicode : U+000A, ASCII : 10, hex : 0x0a) 。
+*  **Windows** ： *CR(carriage return)* ， (character : \r, Unicode : U+000D, ASCII : 13, hex : 0x0d)
+*  **Linux  & macOS** ： *LF(line feed)* ， (character : \n, Unicode : U+000A, ASCII : 10, hex : 0x0a) 
 
 至于为什么会有这样的差异，以及换行符的由来这里不再展开，感兴趣的同学强烈推荐看一下这篇文章：[CRLF vs. LF: Normalizing Line Endings in Git](https://www.aleksandrhovhannisyan.com/blog/crlf-vs-lf-normalizing-line-endings-in-git/#teletypewriters-and-the-birth-of-crlf) 。
 
@@ -62,7 +62,7 @@ Git 是在用户进行 `checkout` 或者 `add`  时根据配置对换行符进�
 
 ### .gitattributes
 
-使用 `core.autocrlf` 这种全局配置需要手动去进行配置，每当使用一台新的电脑拉取代码，或者新的用户加入该 repo 时，都要进行一次配置，这显示不是一种最理想的解决办法。
+使用 `core.autocrlf` 这种全局配置需要手动去进行配置，每当使用一台新的电脑拉取代码，或者新的用户加入该 repo 时，都要进行一次配置，这显然不是一种最理想的解决办法。
 
 除此之外，我们还可以通过在 **repo** 下配置一个 `.gitattributes` 文件来管理 Git 的行为，它会覆盖 Git 的全局配置，以确保当前 repo 下所有用户的表现一直，不受环境和系统的影响。
 
@@ -71,7 +71,7 @@ Git 是在用户进行 `checkout` 或者 `add`  时根据配置对换行符进�
 * text=auto eol=lf
 ```
 
-这里 `eol=lf` 告诉 Git 使用 `ls`  来作为换行符。
+这里 `eol=lf` 告诉 Git 使用 `lf`  来作为换行符。
 而对于 `text=auto` ，因为 Git 有自己的一套简单的算法来检测文件是文本文件还是二进制文件，这里是让 Git 自己检测文本。我们也可以添加更多的属性配置：
 
 ```bash
