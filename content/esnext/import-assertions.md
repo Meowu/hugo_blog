@@ -1,7 +1,6 @@
 ---
 title: "Import Assertions"
 date: 2022-01-31T22:49:58+08:00
-draft: true
 keywords: ["import assertions", "ESNext Stage3", "TypeScript 4.5"]
 tags: ["JavaScript"]
 categories: ["技术分享"]
