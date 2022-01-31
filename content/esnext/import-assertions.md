@@ -80,6 +80,6 @@ new Worker("foo.wasm", { type: "module", assert: { type: "webassembly" } });
 ## 总结
 目前只支持断言文件的类型，但在语言设计上使用了便于前向兼容的对象字面量，也许在未来我们还可以断言更多的属性。
 
-目前通过 **import assertions** 来导入 JSON 模块已经默认在 _Chromium 91_ 上可用。
+通过 **import assertions** 来导入 JSON 模块已经默认在 _Chromium 91_ 上可用。
 
 从 [TypeScript 4.5](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-5.html#import-assertions) 起也已经支持该特性。
