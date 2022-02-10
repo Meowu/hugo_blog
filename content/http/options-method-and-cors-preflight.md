@@ -8,6 +8,7 @@ author: "Meowu"
 ---
 
 ## OPTIONS 方法的使用
+
 `OPTIONS` 方法用于请求关于目标资源可用的通讯选项的信息，它允许客户端在没有指明特定操作的情况下，了解资源关联的选项、需要或者服务器功能。
 `OPTIONS` 请求即可以针对特定的 `URI` 地址，也可以使用 `*`  来对全站使用。
 
@@ -40,7 +41,7 @@ status: 200
 客户端生成一个包含请求体的 `OPTIONS` 请求时，必须发送一个有效的 `Content-Type` 头部字段来描述响应的媒体类型。虽然目前尚未明确定义请求体的使用场景，未来 HTTP 可能使用它来对目标资源做更详细的查询。
 此外，返回给 `OPTIONS` 方法的响应内容是不可缓存的。
 ## CORS 
-因为浏览器有*同源策略*的限制，当应用从与其当前所在的地址不同的的源地址（协议不同、域名不同或端口不同）请求资源时，就会发生跨域请求。在 `XHR` 或者 `FETCH` 请求以及 `ctx.drawImage` 方法把图片或者视频绘制到画布的时候都有可能遇到跨域问题。
+因为浏览器有*同源策略* 的限制，当应用从与其当前所在的地址不同的的源地址（协议不同、域名不同或端口不同）请求资源时，就会发生跨域请求。在 `XHR` 或者 `FETCH` 请求以及 `ctx.drawImage` 方法把图片或者视频绘制到画布的时候都有可能遇到跨域问题。
 
 `CORS(Cross-Origin Resource Sharing)`  定义了在必须访问跨域资源时，浏览器应该如何与服务器进行通讯。`CORS` 的本质，就是使用自定义的 `HTTP` 头部让浏览器与服务器进行沟通，从而决定请求或响应时应该成功，还是应该失败。
 
@@ -57,6 +58,7 @@ status: 200
 
 ##### 只能使用以下头部字段 ：
 Fetch 规范把它们定义为 [对 CORS 安全的首部字段集合](https://fetch.spec.whatwg.org/#cors-safelisted-request-header)
+
 *  [Accept](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Accept) 
 *  [Accept-Language](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Accept-Language) 
 *  [Content-Language](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Content-Language) 
@@ -66,7 +68,9 @@ Fetch 规范把它们定义为 [对 CORS 安全的首部字段集合](https://fe
 *  [Save-Data](http://httpwg.org/http-extensions/client-hints.html#save-data) 
 *  [Viewport-Width](http://httpwg.org/http-extensions/client-hints.html#viewport-width) 
 *  [Width](http://httpwg.org/http-extensions/client-hints.html#width) 
+  
 #####  Content-Type 的值仅限于下列三者之一：
+
 * text/plain
 * multipart/form-data
 * application/x-www-form-urlencoded
