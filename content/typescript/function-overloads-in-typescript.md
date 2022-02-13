@@ -112,5 +112,6 @@ const str: string = A.reduce<string>((str, a) => `${str} ${a.toString()}`, '')
 
 #### 参考
 以下是一些 Github 上的讨论，便于了解更多的细节。
+
 * [Consider re-ordering Array#reduce overloads in lib.d.ts](https://github.com/microsoft/TypeScript/issues/26332)
 * [Array method definition revamp: Use case collection](https://github.com/microsoft/TypeScript/issues/36554)
