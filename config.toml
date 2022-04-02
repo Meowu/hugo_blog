@@ -18,7 +18,6 @@ googleAnalytics = "UA-120601047-1" # Optional
     weight = 1
 
 [params]
-# disqus = "Meowu" # disqus account name
   bio = '子绝四：毋意，毋必，毋固，毋我。'
   extraHead = '<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120601047-1"></script>'
   tags = ['front end', 'TypeScript', 'full stack engineer', 'react', 'vue', 'technology insides', 'thought works']
