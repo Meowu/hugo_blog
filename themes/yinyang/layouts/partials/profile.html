@@ -1,18 +1,17 @@
 <div class="profile col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
-  <header id="header" class="main">
-    <div class="signatures site-title">
-      <a href="{{ .LanguagePrefix }}/">{{ .Site.Author.name }}</a>
-    </div>
-    <div class="site-social">
-        {{ range .Site.Params.social }}
-          <a style="display: inline-block;" href="{{ .url | safeURL }}" title="{{ print .name }}" target="_blank" aria-label="{{ .identifier }}">
+    <header id="header" class="main">
+        <div class="signatures site-title">
+            <a href="{{ .Site.LanguagePrefix }}/">{{ .Site.Author.name }}</a>
+        </div>
+        <div class="site-social">
+            {{ range .Site.Params.social }}
+            <a style="display: inline-block;" href="{{ .url | safeURL }}" title="{{ print .name }}" target="_blank" aria-label="{{ .identifier }}">
             {{ partial (print "svgs/social/"  .identifier  ".svg") (dict "width" 25 "height" 25) }}
-          </a>
-        {{ end }}
-      </ul>
-    </div>
-    <!-- {{ partial "nav.html" . }} -->
-    <!-- <div class="site-navigation">
+          </a> {{ end }}
+            </ul>
+        </div>
+        <!-- {{ partial "nav.html" . }} -->
+        <!-- <div class="site-navigation">
       <ul>
         {{ range .Site.Params.navigation }}
           <li>
@@ -21,5 +20,5 @@
         {{ end }}
       </ul>
     </div> -->
-  </header>
+    </header>
 </div>
