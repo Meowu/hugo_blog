@@ -36,13 +36,22 @@
 
 /*}*/
 
+@font-face {
+  font-family: 'LXGWWenKaiLite';
+  font-style: normal;
+  font-weight: 400;
+  src: url(/fonts/LXGWWenKaiLite-Light.ttf);
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
 
 /* global */
 
 body {
     /*font-family: "Arvo", Arial, Helvetica, sans-serif;*/
     /*font-family: bree serif,sans-serif;*/
-    font-family: 'Open Sans', 'Permanent Marker', sans-serif;
+    font-family: LXGWWenKaiLite, 'Open Sans', 'Permanent Marker', sans-serif;
     margin: 0 20px;
 }
 
@@ -65,6 +74,7 @@ a:hover {
 
 .markdown-body {
     font-size: 18px;
+    font-family: LXGWWenKaiLite, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 
@@ -193,8 +203,9 @@ a:hover {
     /* margin-bottom: 3px; */
 }
 
-.post-line {
-    margin: 12px 0;
+.posts-line {
+    /* margin: 12px 0; */
+    margin: 8px 0;
 }
 
 .posts-footer footer {
