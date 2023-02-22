@@ -57,7 +57,7 @@ author: "Meowu"
   }
 ```
 
-接下来就是计算每个属性所对应的值的类型。现在已经有了泛型 `T` 以及代表每个 _key_ 值的 `P` 参数，通过这两个我们就可以拿到每个 `P` 所对应的值的类型，我们定义一个方法 `UnionValues<T, K>`来 _从联合类型 T 中提取指定的 P 的值_，这里需要用到条件类型中的 [infer](/typescript/infer-keyword-in-typescript/) 。
+接下来就是计算每个属性所对应的值的类型。现在已经有了泛型 `T` 以及代表每个 _key_ 值的 `P` 参数，通过这两个我们就可以拿到每个 `P` 所对应的值的类型，我们定义一个方法 `UnionValues<T, K>`来 _从联合类型 T 中提取指定的 P 的值_ ，这里需要用到条件类型中的 [infer](/typescript/infer-keyword-in-typescript/) 。
 
 ```ts
    type UnionValues<T, K extends PropertyKey> = T extends Record<K, infer U> ? U : never;
