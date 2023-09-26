@@ -5,6 +5,7 @@
 {{ if not .IsHome -}}
 <script src="{{ "js/prism/components/prism-typescript.min.js" | relURL }}"></script>
 <script src="{{ "js/prism/components/prism-python.min.js" | relURL }}"></script>
+<script src="{{ "js/prism/components/prism-bash.min.js" | relURL }}"></script>
 {{- end }}
 {{ if and .Site.Params.lazyImage (not .IsHome) -}}
 <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@10.19.0/dist/lazyload.min.js"></script>
