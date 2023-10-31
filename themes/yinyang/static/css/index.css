@@ -51,7 +51,7 @@
 body {
     /*font-family: "Arvo", Arial, Helvetica, sans-serif;*/
     /*font-family: bree serif,sans-serif;*/
-    font-family: LXGWWenKaiLite, 'Open Sans', sans-serif;
+    font-family: LXGWWenKaiLite, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, 'Open Sans', sans-serif;
     margin: 0 20px;
 }
 
