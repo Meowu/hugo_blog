@@ -61,7 +61,7 @@ ES6 新增的对象展开语法可以让我们很方便地将数组的元素迭�
   const arr3 = [...arr1, ...arr2];
 ```
 
-然而数组中对象展开语法的性能跟 `concat` 相比差别比较大，因为 `concat`  方法只会考虑它要合并的对象是不是一个数组，如果是就把数组的元素逐个添加进来，否则就把对象作为一个整体添加进来。而 `...` 展开语法需要考虑迭代器协议，会大大降低其性能。具体对比可以参考这个链接：[spread-operator-vs-array-concat](https://stackoverflow.com/questions/48865710/spread-operator-vs-array-concat) 。
+然而数组中对象展开语法的性能跟 `concat` 相比差别比较大，因为 `concat`  方法只会考虑它要合并的对象是不是一个数组，如果是就把数组的元素逐个添加进来，否则就把对象作为一个整体添加进来。而 `...` 展开语法需要考虑迭代器协议，会大大降低其性能。具体对比可以参考这个回答：[spread-operator-vs-array-concat](https://stackoverflow.com/questions/48865710/spread-operator-vs-array-concat) ，还有这篇更详细的性能分析：[How slow is the Spread operator in JavaScript?](https://jonlinnell.co.uk/articles/spread-operator-performance) 。
 
 ### 总结
 
