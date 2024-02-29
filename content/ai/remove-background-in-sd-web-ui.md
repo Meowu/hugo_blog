@@ -54,4 +54,4 @@ author: "Meowu"
 
 ![sd-web-ui-rembg-1](/images/sd-web-ui-rembg-1.png)
 
-以上就是使用 SD WebUI 进行背景去除的过程。如果前景是任务的话，使用 `u2net_human_seg` 模型能够获得更好的效果。
+以上就是使用 SD WebUI 进行背景去除的过程。如果前景是人物的话，使用 `u2net_human_seg` 模型能够获得更好的效果。
