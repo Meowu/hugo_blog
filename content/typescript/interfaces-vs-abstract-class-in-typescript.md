@@ -20,6 +20,7 @@ tags: ["TypeScript", "JavaScript", "Programming Language"]
 下面通过实现一个简单的例子来比较一下这两种方法的异同。
 
 ### interface
+
 假设我们要实现一个 `Person` 类，它包含一个 `name` 字段和 `printName` `getPermissions` 两个方法。我们可以使用接口来描述它的结构，如下所示：
 
 ```TypeScript
@@ -70,7 +71,7 @@ const p1: Person = {
 
 ### 抽象类
 
-在 TypeScript 中，类、方法和字段都是可以是抽象( abstract )的，即它们还没有被具体实现，同时也意味着不能直接实例化抽象类。
+在 TypeScript 中，类、方法和字段都是可以是抽象 (abstract) 的，即它们还没有被具体实现，同时也意味着不能直接实例化抽象类。
 
 我们可以用抽象类来替代 `Person` 接口：
 
@@ -102,6 +103,29 @@ p2.printName() // My name is Nina
 ```
 
 在新的实现中，具有相同功能的不同子类无需再分别实现 `printName` 方法，而是将其放在抽象基类中去实现，供所有的子类继承。不同的子类再各自实现抽象方法，这样既约束了类的功能，又实现了代码的共享。然而，这种方法也有一个缺点，就是不同类之间的耦合性增加了。
+
+除此之外，我们还可以在抽象类中使用定义了但尚未实现的抽象方法。
+
+```typescript
+abstract class Person {
+    protected abstract getName(): string
+
+    public printName() {
+        console.log('My name is ' + this.getName())
+    }
+}
+
+class Employee extends Person {
+    protected getName() {
+        return "Meowu"
+    }
+}
+
+const employee = new Employee()
+employee.printName()
+```
+
+`Person` 类的 `printName` 方法调用了抽象方法 `getName` ，该方法的具体逻辑由它的子类去实现。因为子类必须包含抽象基类的每个属性和方法，所以 `getName` 方法必然存在，这也体现了 TypeScript 相对于原生 JavaScript 的一个优点。由子类根据需要各自实现自己的 `getName` 逻辑，这种编程范式提供更大的灵活性和扩展性。
 
 ### 总结
 
