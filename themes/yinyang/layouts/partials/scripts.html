@@ -17,12 +17,11 @@
 {{ end }}
 <script>
   // hljs.initHighlightingOnLoad();
-  
-  const posts = document.getElementById('posts-list');
-  posts && quicklink({
-    el: posts,
-    priority: true,
+
+  window.addEventListener('load', () => {
+    quicklink?.listen?.();
   });
+
 
   const footer = document.querySelector('.posts-footer-age');
   footer && (footer.textContent = '©2018-' + new Date().getFullYear())
