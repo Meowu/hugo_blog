@@ -22,6 +22,8 @@ googleAnalytics = "UA-120601047-1" # Optional
   extraHead = '<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120601047-1"></script>'
   tags = ['front end', 'TypeScript', 'full stack engineer', 'react', 'vue', 'technology insides', 'thought works']
   mainSections = ["content"]
+  description = "A fullstack blog dedicated to web development and AI technologies."
+
 [menu]
 
 [[menu.main]]
