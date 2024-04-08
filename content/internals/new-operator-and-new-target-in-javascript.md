@@ -11,7 +11,6 @@ tags:
     "JavaScript",
     "internals",
   ]
-draft: true
 ---
 
 `new` 操作符允许开发者实例化自定义对象类型或者*具有构造函数*的内置对象类型。
