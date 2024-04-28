@@ -1,5 +1,5 @@
 ---
-title: "Generate Sha256 Hash in Javascript"
+title: "在浏览器中计算 SHA-256 哈希值"
 keywords: ["Web Crypto API", "SHA-256", "md5", "Web API", "Hash Algorithm in Browser", "crypto-js"]
 date: 2024-04-28T21:33:31+08:00
 ---
