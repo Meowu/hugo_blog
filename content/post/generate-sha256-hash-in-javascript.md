@@ -1,6 +1,14 @@
 ---
 title: "在浏览器中计算 SHA-256 哈希值"
-keywords: ["Web Crypto API", "SHA-256", "md5", "Web API", "Hash Algorithm in Browser", "crypto-js"]
+keywords:
+  [
+    "Web Crypto API",
+    "SHA-256",
+    "md5",
+    "Web API",
+    "Hash Algorithm in Browser",
+    "crypto-js",
+  ]
 date: 2024-04-28T21:33:31+08:00
 ---
 
@@ -15,11 +23,11 @@ date: 2024-04-28T21:33:31+08:00
 先通过 `npm install crypto-js` 安装依赖，然后导入 `crypto-js` 库。
 
 ```javascript
-import sha256 from 'crypto-js/sha256';
+import sha256 from "crypto-js/sha256";
 
 function sha256(data) {
-    const hash = CryptoJS.SHA256(data).toString();
-    return hash;
+  const hash = CryptoJS.SHA256(data).toString();
+  return hash;
 }
 ```
 
@@ -42,7 +50,6 @@ Hash 算法的输出不是一个字符串而是一个 `WordArray` 对象，我�
 const base64 = CryptoJS.SHA256(data).toString(CryptoJS.enc.Base64);
 ```
 
-
 ## 出现问题
 
 对比了一下，之所以出现问题应该是因为文件太大导致的。之前发布的包最多只有 100 多 MB ，这次发布的包大小达到了 230 MB。
@@ -59,8 +66,8 @@ Javascript 提供了一个 [SubtleCrypto](https://developer.mozilla.org/en-US/do
 
 `digest` 方法接受两个参数：
 
-* `algorithm`: 要使用的哈希算法，如 `SHA-256`、`SHA-384` 或 `SHA-512`
-* `data`: 要计算哈希值的 buffer 数据
+- `algorithm`: 要使用的哈希算法，如 `SHA-256`、`SHA-384` 或 `SHA-512`
+- `data`: 要计算哈希值的 buffer 数据
 
 输入 `ArrayBuffer` 数据，异步计算完成后返回的也是 `ArrayBuffer` 数据。
 
@@ -70,11 +77,13 @@ Javascript 提供了一个 [SubtleCrypto](https://developer.mozilla.org/en-US/do
 
 ```javascript
 const hash = async (data) => {
-  const dataBuffer = new TextEncoder().encode(data)
-  const hashBuffer = await await crypto.subtle.digest('SHA-256', dataBuffer);
+  const dataBuffer = new TextEncoder().encode(data);
+  const hashBuffer = await await crypto.subtle.digest("SHA-256", dataBuffer);
   const uint8Array = new Uint8Array(hashBuffer);
-  const hexString = Array.from(uint8Array, byte => byte.toString(16).padStart(2, '0')).join('');
-}
+  const hexString = Array.from(uint8Array, (byte) =>
+    byte.toString(16).padStart(2, "0")
+  ).join("");
+};
 ```
 
 ## 总结
@@ -86,5 +95,5 @@ const hash = async (data) => {
 
 ## 参考
 
-* [MDN: SubtleCrypto](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto)
-* [MDN: TextEncoder](https://developer.mozilla.org/en-US/docs/Web/API/TextEncoder)
+- [MDN: SubtleCrypto](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto)
+- [MDN: TextEncoder](https://developer.mozilla.org/en-US/docs/Web/API/TextEncoder)
