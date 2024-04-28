@@ -84,7 +84,7 @@ const hash = async (data) => {
 1. `crypto-js` 方法虽然比较方便地进行摘要计算，但计算大文件时会出错，因为 `crypto-js` 将整个文件加载到内存中，而文件过大会导致内存溢出；
 2. `SubtleCrypto` 接口可以异步地计算哈希值，适用于计算大文件；并且是浏览器原生支持的，不需要额外安装依赖，目前的浏览器支持也十分完善了；
 
-## References
+## 参考
 
 * [MDN: SubtleCrypto](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto)
 * [MDN: TextEncoder](https://developer.mozilla.org/en-US/docs/Web/API/TextEncoder)
